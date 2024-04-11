@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Baito</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script src="https://kit.fontawesome.com/01583b2b57.js" crossorigin="anonymous"></script> 
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+ 
+  <body>
+  <header>
+  <h1>バイト</h1>
+  <div class="header-list">
+    <ul>
+    <% if user_signed_in? %>
+      <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to "新規登録", new_user_registration_path %></li>
+      <li><%= link_to "ログイン", new_user_session_path %></li>
+    <% end %>
+    </ul>
+
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <div class="menu-content">
+        <ul>
+            <li>
+                <a href="#">メニューリンク1</a>
+            </li>
+            <li>
+                <a href="#">メニューリンク2</a>
+            </li>
+            <li>
+                <a href="#">メニューリンク3</a>
+            </li>
+        </ul>
+    </div>
+      
+      </div>
+  </div>
+ </header>
+ <main>
+  <%= yield %>
+ </main>
+ <footer>
+      <p>Copyright © GeekSalon All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

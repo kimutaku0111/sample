@@ -1,0 +1,124 @@
+.post-container {
+    margin: 50px auto;
+    width: 50%;
+    border: solid #6118c1;
+    border-radius: 20px;
+    text-align: center;
+    background: -moz-linear-gradient(65deg, #F13F79, #FFC778);
+    background: -webkit-linear-gradient(65deg, #F13F79, #FFC778);
+    background: linear-gradient(25deg, #F13F79, #FFC778);
+
+  }
+  .tenmei input{
+    height: 30px;
+    width: 60%;
+    font-size: 18px;
+    margin: 5px auto;
+
+  }
+  .gyuosyu input{
+    height: 30px;
+    width: 60%;
+    font-size: 18px;
+    margin: 5px auto;
+
+  }
+  .jikyuu input{
+    height: 30px;
+    width: 60%;
+    font-size: 18px;
+    margin: 5px auto;
+
+  }
+  .syousai input{
+    height: 30px;
+    width: 60%;
+    font-size: 18px;
+    margin: 5px auto;
+
+  }
+  
+  .gazou input{
+    width: 60%;
+    font-size: 18px;
+    margin: 10px auto;
+
+  }
+
+  .hyouka{
+    text-align: center;
+    margin: 10px auto;
+font-size: 18px;
+  }
+
+  .post{
+    padding: 30px
+  }
+
+  .lecture_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 300px;
+    margin: 30px;
+  }
+  .name_field{
+    width: 200px;
+    margin-bottom: 30px;
+  }
+
+/*　以下新規投稿ページの星用のCSS　*/
+
+  .post_form{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+  }
+  .post_form input[type='radio']{
+    display: none;
+  }
+  .post_form label{
+    position: relative;
+    padding: 10px 10px 0;
+    color: rgb(95, 91, 91);
+    cursor: pointer;
+    font-size: 50px; /*星の大きさを変更するときはここ*/
+  }
+  .post_form label .text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: center;
+    font-size: 14px; /*星の上の説明書きの大きさを変更するときはここ*/
+    color: rgb(12, 11, 11);
+  }
+  .post_form label:hover,
+  .post_form label:hover ~ label,
+  .post_form input[type='radio']:checked ~ label{
+    color: #fdd303e7;
+  }
+
+
+/*　以下一覧ページの星用のCSS　*/
+
+  .star-rating {
+    position: relative;
+    display: inline-block;
+    width: 5em;
+    height: 1em;
+    font-size: 25px;
+  }
+  .star-rating-front {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: #8b33ff;
+  }
+  .star-rating-back {
+    display: inline-block;
+    color: #ccc;
+
+  }

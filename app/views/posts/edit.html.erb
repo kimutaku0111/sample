@@ -1,0 +1,39 @@
+<%= form_for @post do |f| %>
+
+<div class="hennshuu">
+
+  <div class="field">
+  　 <%= f.label :店名 %>
+    <%= f.text_field :name, :size => 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :業種 %>
+    <%= f.text_field :category, :size => 30 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :時給 %>
+    <%= f.number_field :price, :size => 10 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :詳細 %>
+    <%= f.text_area :about, :size => "30x2" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :画像 %>
+    <%= f.file_field :image %>
+  </div> 
+
+</div> 
+
+
+
+    <%= f.submit "編集する" %>
+  <% end %>
+
+  <%= stylesheet_link_tag 'edit', :media => "all" %>
+
+  <%= link_to "一覧に戻る", posts_path %>

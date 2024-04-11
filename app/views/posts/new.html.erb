@@ -1,0 +1,82 @@
+
+
+<div class="post-container">
+<style>
+    .title {
+        font-size: 30px; 
+    }
+</style>
+<p class="title">新規ポスト</p>
+
+
+  <%= form_for @post do |f| %>
+    <div class="tenmei">
+    <%= f.label :店名, style: "font-size: 20px;" %>
+    <%= f.text_field :name %>
+    </div>
+
+    <div class="gyuosyu">
+      <%= f.label :業種, style: "font-size: 20px;" %>
+      <%= f.text_field :category %>
+    </div>
+
+    <div class="jikyuu">
+      <%= f.label :時給, style: "font-size: 20px;"%>
+      <%= f.number_field :price %>
+    </div>
+
+    <div class="syousai">
+      <%= f.label :詳細, style: "font-size: 20px;" %>
+      <%= f.text_field :about %>
+    </div>
+
+    <div class="gazou">
+      <%= f.label :画像, style: "font-size: 20px;" %>
+      <%= f.file_field :image %>
+    </div>
+
+    <style>
+    h5 {
+        font-size: 18px; /* サイズを変更する値を指定します */
+    }
+</style>
+    <h5>総合評価</h5>
+    
+</style>
+    <div class="hyouka">
+      <div class="post_form">
+        <%= f.radio_button :overall, 5 ,id: 'star1'%>
+        <label for="star1"><span class="text">最高</span>★</label>
+
+        <%= f.radio_button :overall, 4 ,id: 'star2'%>
+        <label for="star2"><span class="text">良い</span>★</label>
+
+        <%= f.radio_button :overall, 3 ,id: 'star3'%>
+        <label for="star3"><span class="text">普通</span>★</label>
+
+        <%= f.radio_button :overall, 2 ,id: 'star4'%>
+        <label for="star4"><span class="text">悪い</span>★</label>
+
+        <%= f.radio_button :overall, 1 ,id: 'star5'%>
+        <label for="star5"><span class="text">最悪</span>★</label>
+      </div>
+    </div>
+
+    <div class='form-group'>
+          <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+              <div class='form-check'>
+                  <%= tag.label class: 'form-check-label' do %>
+                      <%= tag.check_box class: 'form-check-input' %>
+                      <%= tag.text %>
+                  <% end %>
+              </div>
+          <% end %>
+    </div>
+    <%= f.submit "投稿する", style: "font-size: 20px;"  %>
+  <% end %>
+</div>
+<%= stylesheet_link_tag 'new', :media => "all" %>
+
+
+
+<%= link_to "一覧に戻る", posts_path %>
